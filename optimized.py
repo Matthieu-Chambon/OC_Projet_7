@@ -8,7 +8,7 @@ def get_dynamic_programming(items, weight, step):
     dp = [
         [0 for _ in range(0, weight+step, step)]
         for _ in range(len(items)+1)
-    ]  # O(n)
+    ]  # O(n*w)
 
     pourcentage = 0
     for i, item in enumerate(items, start=1):  # O(n)
@@ -41,7 +41,7 @@ def get_optimal_combination(dp, items, w, step):
 start_time = time.time()
 
 # file_name = "Liste d'actions.csv"
-file_name = "Dataset 2.csv"
+file_name = "Dataset 1.csv"
 with open(file_name, mode="r", encoding="utf-8") as file:  # O(1)
     reader = csv.reader(file, delimiter=",")
     data = list(reader)
